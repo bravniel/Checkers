@@ -1,0 +1,339 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body{
+    background: url(https://d3hp2os08tb528.cloudfront.net/checkers/images/lightwood.png);
+    width: 100vw;
+    height: 100vh;
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content:space-evenly;
+}
+#turn{
+	border-radius:8px;
+	font-size:calc(7vh - 1vw);
+	font-weight:bold;
+    color:#ffffff;
+    text-align: center;
+    width: calc(25vh - 1vw);
+    height: calc(20vh - 1vw);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.playerTurn-grid{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(25vh - 1vw);
+    height: calc(90vh - 1vw);
+}
+.grid-outline{
+    width: calc(90vh - 1vw);
+    height: calc(90vh - 1vw);
+    background: url(https://d3hp2os08tb528.cloudfront.net/checkers/images/darkwood.png);
+    box-shadow: #533b30 0 0 10px;
+    border-radius: 2%;
+    background-size: 20%;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #96643c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.grid{
+    width: calc(80vh - 1vw);
+    height: calc(80vh - 1vw);
+    outline: 5px solid #533b30;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.lightwood-square{
+    background: url(https://d3hp2os08tb528.cloudfront.net/checkers/images/lightwood.png);
+    
+
+}
+.darkwood-square{
+    background: url(https://d3hp2os08tb528.cloudfront.net/checkers/images/darkwood.png);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.white-man{
+    height: 70%;
+    width: 70%;
+    background-color: white;
+    outline: 3px solid #dddddd;
+    border-radius: 50%;
+}
+.black-man{
+    height: 70%;
+    width: 70%;
+    background-color: #333;
+    outline: 3px solid #000;
+    border-radius: 50%;
+}
+.king{
+    background-image: url("crown.png");
+    background-size: 150%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.clicked{
+    outline: 3px solid gold;
+}
+button{
+    box-shadow:none;
+	background-color:#dddddd;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size: calc(7vh - 1vw);
+	font-weight:bold;
+	text-decoration:none;
+    width: calc(25vh - 1vw);
+    height: calc(10vh - 1vw);
+    border-color: #333;
+}
+button:hover {
+	background-color:#333;
+    box-shadow: 0px 10px 14px -7px #bdbdbd;
+    border-color: #dddddd;
+}
+.btn-grid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: calc(25vh - 1vw);
+    height: calc(90vh - 1vw);
+    gap:  10px;
+}
+.none {
+    display: none;
+}
+
+.modal {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(192, 192, 192, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-box {
+    width: calc(50vh - 1vw);
+    height: calc(60vh - 1vw);
+    padding: 1rem;
+    background: white;
+    border: 3px solid black;
+    border-radius: 5px;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    flex-direction: column;
+}
+p{
+    text-align: center;
+    font-size: calc(9vh - 1vw);
+}
+
+@media (max-width :550px) {
+    body{
+         flex-direction:column;
+     }
+     #turn{
+     font-size: 5vw;
+     width: 60vw;
+     height: 15vw;
+     }
+     .playerTurn-grid{
+     width: 90vw;
+     height: 30vw;
+     }
+     .grid-outline{
+     width: 90vw;
+     height: 90vw;
+     }   
+     .grid{
+     width: 80vw;
+     height: 80vw;
+     }
+     button{
+     font-size: 5vw;
+     width: 30vw;
+     height: 15vw;
+     }
+     .btn-grid{
+     flex-direction: row;
+     width: 90vw;
+     height: 30vw;
+     gap: 10px;
+     }
+     .modal-box {
+     width: 60vw;
+     height: 100vw;
+     }
+     p{
+        font-size: 8vw;
+     }
+    .modal-box .btn-grid{
+        flex-direction: column;
+    }
+    .modal-box button{
+        font-size: 4vw;
+        width: 30vw;
+        height: 10vw;
+    }
+ }
+ @media (min-width :550px) and (max-width :850px){
+    body{
+         flex-direction:column;
+     }
+     #turn{
+     font-size: 3vw;
+     width: 60vw;
+     height: 8vw;
+     }
+     .playerTurn-grid{
+     width: 90vw;
+     height: 10vw;
+     }
+     .grid-outline{
+     width: 80vw;
+     height: 80vw;
+     }   
+     .grid{
+     width: 70vw;
+     height: 70vw;
+     }
+     button{
+     font-size: 3vw;
+     width: 30vw;
+     height: 8vw;
+     }
+     .btn-grid{
+     flex-direction: row;
+     width: 90vw;
+     height: 10vw;
+     gap: 10px;
+     }
+     .modal-box {
+     width: 60vw;
+     height: 80vw;
+     }
+     p{
+        font-size: 6vw;
+     }
+    .modal-box .btn-grid{
+        flex-direction: column;
+        height: 20vw;
+    }
+    .modal-box button{
+        font-size: 4vw;
+        width: 30vw;
+        height: 20vw;
+    }
+    #ok-btn{
+        width: 30vw;
+        height: 15vw;
+    }
+ }
+ @media (min-width :850px) and (max-width :1000px){
+    body{
+         flex-direction:column;
+     }
+     #turn{
+     font-size: 2vw;
+     width: 40vw;
+     height: 4vw;
+     }
+     .playerTurn-grid{
+     width: 90vw;
+     height: 5vw;
+     }
+     .grid-outline{
+     width: 70vw;
+     height: 70vw;
+     }   
+     .grid{
+     width: 60vw;
+     height: 60vw;
+     }
+     button{
+     font-size: 2vw;
+     width: 20vw;
+     height: 4vw;
+     }
+     .btn-grid{
+     flex-direction: row;
+     width: 90vw;
+     height: 5vw;
+     gap: 10px;
+     }
+     .modal-box {
+     width: 40vw;
+     height: 60vw;
+     }
+     p{
+        font-size: 5vw;
+     }
+    .modal-box .btn-grid{
+        flex-direction: column;
+        height: 15vw;
+    }
+    .modal-box button{
+        font-size: 4vw;
+        width: 20vw;
+        height: 15vw;
+    }
+    #ok-btn{
+        width: 20vw;
+        height: 10vw;
+    }
+ }
+ @media (min-width :1000px) and (max-width :1200px){
+     #turn{
+        font-size:calc(4vh - 1vw);
+     width: calc(15vh - 1vw);
+    height: calc(20vh - 1vw);
+     }
+     .playerTurn-grid{
+        width: calc(15vh - 1vw);
+        height: calc(90vh - 1vw);
+     }
+     .grid-outline{
+        width: calc(80vh - 1vw);
+        height: calc(80vh - 1vw);
+     }   
+     .grid{
+        width: calc(70vh - 1vw);
+        height: calc(70vh - 1vw);
+     }
+     button{
+        font-size:calc(4vh - 1vw);
+     width: calc(15vh - 1vw);
+     height: calc(10vh - 1vw);
+     }
+     .btn-grid{
+     width: calc(15vh - 1vw);
+     height: calc(90vh - 1vw);
+     gap: 10px;
+     }
+     p{
+        font-size: calc(7vh - 1vw);
+    }
+    }
